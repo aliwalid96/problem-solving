@@ -8,7 +8,7 @@
 //  [12, 32, 22, 45, 78, 12, 50] ==> 78
 //  
 // ------------------------
-let arryOfNumber=[12, 32, 22, 45, 78, 12, 50];
+// let arryOfNumber=[12, 32, 22, 45, 78, 12, 50];
 const findMax = (arr)=>{
     let max=12;
     for(let i=0;i<arr.length;i++){
@@ -31,7 +31,7 @@ console.log(findMax(arryOfNumber));
 //  inside the array (there could be strings inside), without using build-in functions
 //  EX:
 //  [20, '234', 'car', 41, 20, 'chair'] ==> 81
-let arrForSum=[20, '234', 'car', 41, 20, 'chair'];
+// let arrForSum=[20, '234', 'car', 41, 20, 'chair'];
 
 const sumNums = (arr)=>{
     let sum=0;
@@ -58,7 +58,7 @@ console.log(sumNums(arrForSum));
 //  ['C#', 'JS', 'Ruby','Python' ] ==> ['Python','Ruby','JS','C#']
 // 
 // ------------------------
-let reverseArrayElement=['C#', 'JS', 'Ruby','Python' ] ;
+// let reverseArrayElement=['C#', 'JS', 'Ruby','Python' ] ;
 const reverseArray = (arr)=>{
     for(let i=arr.length;i=>0;i--)
     {
@@ -69,4 +69,4 @@ reverseArray(reverseArrayElement);
 
 
 
-//module.exports = {findMax , sumNums, reverseArray};
+module.exports = {findMax , sumNums, reverseArray};
