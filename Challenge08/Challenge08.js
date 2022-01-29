@@ -54,6 +54,7 @@ const customerAndAge = (obj) => {
 // -------------------------------------------------------------------------------------------------------
 
 const getEntries = (obj) => {
+  
   return ["name :"+obj.name,"ingredients :"+obj.ingredients,"cookTime : "+obj.cookTime,"price : "+obj.price];
 };
 
