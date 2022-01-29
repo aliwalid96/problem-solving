@@ -27,7 +27,7 @@ const objLat = (firstName,lastName,age,hobby) => {
     // write your code here
 };
 
-console.log(objLat("Ali","waleed",25,"reading and coding"));
+//console.log(objLat("Ali","waleed",25,"reading and coding"));
 
 // 2) ---------------------
 //
