@@ -23,7 +23,7 @@ const objLat = (firstName,lastName,age,hobby) => {
     this.lastName=lastName;
     this.age=age;
     this.hobby=hobby;
-    return "my name is "+firstName+lastName+"I am  "+age+"year old and I love "+hobby;
+    return "my name is "+firstNamestr.charAt(0).toUpperCase()+lastNamestr.charAt(0).toUpperCase()+"I am  "+age+"year old and I love "+hobby;
     // write your code here
 };
 
@@ -89,8 +89,15 @@ console.log(objLat("Ali","waleed",25,"reading and coding"));
 //  2- If one of the names is null dont add it to the full name
 
 // ------------------------
+
 const cvFormatter = (arr) => {
-    
+    let newArray=[];
+    for(let i=0;i<arr.length;i++){
+        if(arr[i].yearsOfExperience<1&&arr[i].lastName!="null" &&arr[i].lastName){
+     newArray.push( arr[i].firstName+arr[i].lastName+arr[i].tech);
+        }
+    }
+    return newArray;
     // write your code here
 };
 
@@ -240,6 +247,16 @@ let data = {
 //  2- You need to round the average to the nearest lower number 
 
 const classesAvg = (data) => {
+    for(let i=0;i<data.length;i++){
+        let theNumberOfScores=0;
+        let theTotal=0;
+       for(let j=0;j<data[i].classes.classScores.length;j++){
+    theTotal=data[i].classScores[j]+theTotal;
+    theNumberOfScores ++;
+       }
+       avg=data.theTotal/theNumberOfScores;
+       
+    }
     // write your code here
 };
 
