@@ -27,8 +27,14 @@
 // -------------------------------------------------------------------------------------------------------
 
 const customerAndAge = (obj) => {
-  // write your code here
+  let newArray = [];
+    for (let theName in obj) {
+        let finalValue = `Customer Name :${theName} , Age :${obj[theName]}`;
+        newArray.push(finalValue); 
+    }
+    return newArray;
 };
+
 
 // -------------------------------------------------------------------------------------------------------
 // Challenge 02
@@ -54,7 +60,8 @@ const customerAndAge = (obj) => {
 // -------------------------------------------------------------------------------------------------------
 
 const getEntries = (obj) => {
-  return ["name :"+obj.name,"ingredients :"+obj.ingredients,"cookTime : "+obj.cookTime,"price : "+obj.price];
+  
+  return ["name: "+obj.name,"ingredients: "+obj.ingredients,"cookTime: "+obj.cookTime,"price: "+obj.price];
 };
 
 // -------------------------------------------------------------------------------------------------------
