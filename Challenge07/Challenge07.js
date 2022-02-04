@@ -288,9 +288,10 @@ const classesAvg = (data) => {
             theTotal = data[i].classScores[j] + theTotal;
             theNumberOfScores++;
 
-            
+
         }
         avg = data.theTotal / theNumberOfScores;
+        // ddd
 return data;
     }
 
