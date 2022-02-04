@@ -51,6 +51,9 @@ const roundDecimals = (arr) => {
         element=Math.round(element);
 
         theArray.push(element);
+
+
+        
     });
     return theArray;
 }
