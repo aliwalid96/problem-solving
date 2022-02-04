@@ -277,18 +277,21 @@ let data = {
 //  Note that:
 //  1- This is not the exact data you will be getting every time and the solution should be dynamic
 //  2- You need to round the average to the nearest lower number 
-
+// dddddddd
 
 const classesAvg = (data) => {
-
+   let useData={};
     for (let i = 0; i < data.grade.length; i++) {
         let theNumberOfScores = 0;
         let theTotal = 0;
         for (let j = 0; j < data[i].classes.classScores.length; j++) {
             theTotal = data[i].classScores[j] + theTotal;
             theNumberOfScores++;
+
+
         }
         avg = data.theTotal / theNumberOfScores;
+        // ddd
 return data;
     }
 
