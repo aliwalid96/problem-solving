@@ -17,8 +17,12 @@
 
 const arrInc = (arr) => {
     let result = [];
-    // write your code here
-    return result;
+
+    arr.forEach(element => {
+        element=element+10;
+        result.push(element)  ;
+    });
+       return result;
 }
 
 
@@ -31,7 +35,22 @@ const arrInc = (arr) => {
 // 
 // ------------------------
 const roundDecimals = (arr) => {
-    // write your code here
+    let theArray=[];
+    arr.forEach(element=>{
+        // if(element%1==1){
+        //     element=element;
+        // }else if(element%1>0.5){
+        //     let more=element%1;
+        //     element=element-more+1;
+        // }else if(element%1<0.5){
+        //     let less=element%1;
+        //     element=element-less;
+        // 
+        element=Math.round(element);
+
+        theArray.push(element);
+    });
+    return theArray;
 }
 
 // 3) ---------------------
