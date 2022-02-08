@@ -7,7 +7,9 @@
 // forEach: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach
 
 
+
 ///
+
 // 1) ---------------------
 // 
 //  using the (arrInc) function; increase the provided array values by 10
@@ -25,6 +27,7 @@ const arrInc = (arr) => {
         result.push(element)  ;
     });
        return result;
+
 }
 
 
@@ -37,6 +40,7 @@ const arrInc = (arr) => {
 // 
 // ------------------------
 const roundDecimals = (arr) => {
+
     let theArray=[];
     arr.forEach(element=>{
         // if(element%1==1){
@@ -56,6 +60,7 @@ const roundDecimals = (arr) => {
         
     });
     return theArray;
+
 }
 
 // 3) ---------------------
@@ -125,11 +130,12 @@ const roundDecimals = (arr) => {
 const employeesBonus = (arr) => {
     // write your code here
 
+
     if(arr.workHours>8){element=>{
         
     }
 
-    }
+    
 }
 
 // 4) ---------------------
@@ -149,5 +155,5 @@ const employeesBonus = (arr) => {
 const mostExpensive = (budget, mouseArray, keyBoardArray) => {
     // write your code here
 }
-
+};
 module.exports = { arrInc, roundDecimals, employeesBonus, mostExpensive };
