@@ -11,26 +11,23 @@
 //  }
 //   ===>
 //   'my name is Jaber Saleh I am 67 YO, and I love Gaming and Sleeping.'
-
+ 
 //  Note that:
 //  1- The text template is 'my name is ** ** I am ** YO, and I love **.'
 //  2- The first letters of the firstName and lastName should be capital letter
 
 // ------------------------
 
-const objLat = (data) => {
-    let firstName = data.firstName.charAt(0).toUpperCase() + data.firstName.slice(1);
-    let lastName = data.lastName.charAt(0).toUpperCase() + data.lastName.slice(1);
-
-    let age = data.age;
-    let hobby = data.hobby;
-    // capitalizing :console.log(str.charAt(0).toUpperCase() + str.slice(1));
-    //const combine = `${str1} ${str2}`;
-    return `my name is ${firstName} ${lastName} I am ${age} YO, and I love ${hobby}.`;
+const objLat = (firstName,lastName,age,hobby) => {
+    this.firstName=firstName;
+    this.lastName=lastName;
+    this.age=age;
+    this.hobby=hobby;
+    return "my name is "+firstNamestr.charAt(0).toUpperCase()+lastNamestr.charAt(0).toUpperCase()+"I am  "+age+"year old and I love "+hobby;
     // write your code here
 };
 
-
+//console.log(objLat("Ali","waleed",25,"reading and coding"));
 
 // 2) ---------------------
 //
@@ -75,7 +72,7 @@ const objLat = (data) => {
 // [
 //     {
 //         fullName: "Jason James",
-//         tech: "JS" 
+//         tech: "JS"
 //     },
 //     {
 //         fullName: "Shira",
@@ -93,45 +90,16 @@ const objLat = (data) => {
 
 // ------------------------
 
-
-
-
 const cvFormatter = (arr) => {
-    let newArray = [];
-    for (let i = 0; i < arr.length; i++) {
-        if (arr[i].yearsOfExperience > 1) {
-            let obj = {};
-            let firstName="";
-            let lastName="";
-            if(arr[i].firstName!=null){
-                 firstName = arr[i].firstName;
-            }
-            if(arr[i].lastName!=null){
-                 lastName =" "+ arr[i].lastName;
-            }
-            
-            
-            obj["fullName"] = firstName+lastName;
-            obj["tech"] = arr[i].tech;
-            newArray.push(obj);
+    let newArray=[];
+    for(let i=0;i<arr.length;i++){
+        if(arr[i].yearsOfExperience<1&&arr[i].lastName!="null" &&arr[i].lastName){
+     newArray.push( arr[i].firstName+arr[i].lastName+arr[i].tech);
         }
     }
     return newArray;
+    // write your code here
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // 3) ---------------------
 //
@@ -277,24 +245,19 @@ let data = {
 //  Note that:
 //  1- This is not the exact data you will be getting every time and the solution should be dynamic
 //  2- You need to round the average to the nearest lower number 
-// dddddddd
 
 const classesAvg = (data) => {
-   let useData={};
-    for (let i = 0; i < data.grade.length; i++) {
-        let theNumberOfScores = 0;
-        let theTotal = 0;
-        for (let j = 0; j < data[i].classes.classScores.length; j++) {
-            theTotal = data[i].classScores[j] + theTotal;
-            theNumberOfScores++;
-
-
-        }
-        avg = data.theTotal / theNumberOfScores;
-        // ddd
-return data;
+    for(let i=0;i<data.length;i++){
+        let theNumberOfScores=0;
+        let theTotal=0;
+       for(let j=0;j<data[i].classes.classScores.length;j++){
+    theTotal=data[i].classScores[j]+theTotal;
+    theNumberOfScores ++;
+       }
+       avg=data.theTotal/theNumberOfScores;
+       
     }
-
+    // write your code here
 };
 
 module.exports = { objLat, cvFormatter, applicationsStatics, classesAvg };
