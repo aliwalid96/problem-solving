@@ -7,9 +7,7 @@
 // forEach: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach
 
 
-
 ///
-
 // 1) ---------------------
 // 
 //  using the (arrInc) function; increase the provided array values by 10
@@ -27,7 +25,6 @@ const arrInc = (arr) => {
         result.push(element)  ;
     });
        return result;
-
 }
 
 
@@ -40,7 +37,6 @@ const arrInc = (arr) => {
 // 
 // ------------------------
 const roundDecimals = (arr) => {
-
     let theArray=[];
     arr.forEach(element=>{
         // if(element%1==1){
@@ -55,12 +51,8 @@ const roundDecimals = (arr) => {
         element=Math.round(element);
 
         theArray.push(element);
-
-
-        
     });
     return theArray;
-
 }
 
 // 3) ---------------------
@@ -129,11 +121,15 @@ const roundDecimals = (arr) => {
 // ------------------------
 const employeesBonus = (arr) => {
     // write your code here
-
-
-    if(arr.workHours>8){element=>{
-        
+arr.forEach(element=>{
+    if(element.workHours>8){
+        element.salary=`${parseInt(element.salary) + 100}$`
+    }else{
+        element.salary = `${parseInt(element.salary) + 50}$`;
     }
+
+})
+   return arr;
 
     
 }
@@ -153,7 +149,23 @@ const employeesBonus = (arr) => {
 // ==> 200
 // ------------------------
 const mostExpensive = (budget, mouseArray, keyBoardArray) => {
-    // write your code here
+    let total = 0;
+    mouseArray.forEach((price) => {
+      keyBoardArray.forEach((keyPrice) => {
+
+        let check = price + keyPrice;
+
+        if (check > budget) return;
+        if (check < budget && check > total) {
+            total = check;
+        }
+        if (check === budget) return (total = check);
+      });
+    });
+    return total;
+
+
+
 }
-};
+
 module.exports = { arrInc, roundDecimals, employeesBonus, mostExpensive };
