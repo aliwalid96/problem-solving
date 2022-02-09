@@ -6,6 +6,8 @@
 // Resource:
 // forEach: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach
 
+
+///
 // 1) ---------------------
 // 
 //  using the (arrInc) function; increase the provided array values by 10
@@ -17,8 +19,12 @@
 
 const arrInc = (arr) => {
     let result = [];
-    // write your code here
-    return result;
+
+    arr.forEach(element => {
+        element=element+10;
+        result.push(element)  ;
+    });
+       return result;
 }
 
 
@@ -31,7 +37,22 @@ const arrInc = (arr) => {
 // 
 // ------------------------
 const roundDecimals = (arr) => {
-    // write your code here
+    let theArray=[];
+    arr.forEach(element=>{
+        // if(element%1==1){
+        //     element=element;
+        // }else if(element%1>0.5){
+        //     let more=element%1;
+        //     element=element-more+1;
+        // }else if(element%1<0.5){
+        //     let less=element%1;
+        //     element=element-less;
+        // 
+        element=Math.round(element);
+
+        theArray.push(element);
+    });
+    return theArray;
 }
 
 // 3) ---------------------
@@ -100,6 +121,17 @@ const roundDecimals = (arr) => {
 // ------------------------
 const employeesBonus = (arr) => {
     // write your code here
+arr.forEach(element=>{
+    if(element.workHours>8){
+        element.salary=`${parseInt(element.salary) + 100}$`
+    }else{
+        element.salary = `${parseInt(element.salary) + 50}$`;
+    }
+
+})
+   return arr;
+
+    
 }
 
 // 4) ---------------------
@@ -117,7 +149,29 @@ const employeesBonus = (arr) => {
 // ==> 200
 // ------------------------
 const mostExpensive = (budget, mouseArray, keyBoardArray) => {
-    // write your code here
+    let total = 0;
+    mouseArray.forEach((price) => {
+      keyBoardArray.forEach((keyPrice) => {
+
+        let check = price + keyPrice;
+
+        if (check > budget) return;
+        if (check < budget && check > total) {
+            total = check;
+        }
+        if (check === budget) return (total = check);
+      });
+    });
+    return total;
+
+
+
+    
+
+
 }
+
+
+
 
 module.exports = { arrInc, roundDecimals, employeesBonus, mostExpensive };
