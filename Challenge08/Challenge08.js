@@ -102,6 +102,12 @@ const courses = [
 const getInfo = (arr) => {
   let coursesName = [];
   let studentsName = [];
+  for (let i=0;i<arr.length;i++){
+    coursesName.push(arr[i].course);
+    arr[i].Students.forEach((student) => studentsName.push(student))
+  }
+
+
   // write your code here
 
   return { coursesName, studentsName };
@@ -126,13 +132,24 @@ const getInfo = (arr) => {
 //  ------------------------------------------------------------------------------------------------------
 
 const getStudents = (arr) => {
-  // write your code here
-  let studenObj={
-      studen :arr[0],
-      course :"pythone"
 
+let studentInfo=[];
+
+  for (let i = 0; i < arr.length; i++) {
+    let theStudent = {
+      Student: arr[i],
+    };
+    for (let j = 0; j <courses.length; j++) {
+      if (courses[j].Students.includes(arr[i])) {
+        theStudent.course = courses[j].course;
+      }
+    }
+    studentInfo.push(theStudent);
   }
-  return studenObj;
+
+  return studentInfo;
+
+
 
 };
 
