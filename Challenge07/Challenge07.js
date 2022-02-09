@@ -128,11 +128,6 @@ const cvFormatter = (arr) => {
 
 
 
-
-
-
-
-
 // 3) ---------------------
 //
 //  Rekey wants to get statistic about the applicants
@@ -154,7 +149,39 @@ const cvFormatter = (arr) => {
 
 // ------------------------
 const applicationsStatics = (arr) => {
-    // write your code here
+    const result = {
+        python_Devs: 0,
+        javaScript_Devs: 0,
+        dotNet_Devs: 0,
+        java_Devs: 0,
+        totalApplicants: arr.length,
+        rejectedApplicants: 0,
+      };
+      arr.forEach((applicant) => {
+        if (applicant.tech == "Java"){
+            result.java_Devs++;
+        } 
+        if (applicant.tech == "JS"){
+            result.javaScript_Devs++;
+        } 
+        if (applicant.tech == ".Net"){
+            result.dotNet_Devs++;
+        } 
+        if (applicant.tech == "Python"){
+            result.python_Devs++;
+        } 
+        if (applicant.firstName == "" && applicant.lastName == ""){
+          result.rejectedApplicants++;
+        }
+        if (applicant.firstName == null && applicant.lastName == null ){
+            result.rejectedApplicants++;
+          }
+          
+        if (applicant.yearsOfExperience <= 1){
+            result.rejectedApplicants++;
+        } 
+      });
+      return result;
 };
 
 // 4) ---------------------
@@ -280,20 +307,21 @@ let data = {
 // dddddddd
 
 const classesAvg = (data) => {
-   let useData={};
-    for (let i = 0; i < data.grade.length; i++) {
-        let theNumberOfScores = 0;
-        let theTotal = 0;
-        for (let j = 0; j < data[i].classes.classScores.length; j++) {
-            theTotal = data[i].classScores[j] + theTotal;
-            theNumberOfScores++;
-
-
+    for (let i = 0; i < data.grades.length; i++) {
+        for (let j = 0; j < data.grades[i].classes.length; j++) {
+          let sum = 0;
+          data.grades[i].classes[j].avg;
+          for (let k = 0; k < data.grades[i].classes[j].classScores.length; k++) {
+            sum += data.grades[i].classes[j].classScores[k];
+          }
+          data.grades[i].classes[j].avg = Math.floor(
+            sum / data.grades[i].classes[j].classScores.length
+          );
         }
-        avg = data.theTotal / theNumberOfScores;
-        // ddd
-return data;
-    }
+      }
+      return data;
+
+
 
 };
 
